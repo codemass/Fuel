@@ -20,9 +20,10 @@ public class MainActivity extends AppCompatActivity {
         EditText Price = (EditText) findViewById(R.id.fuelPrice);
         TextView Total = (TextView) findViewById(R.id.result);
 
-        int Balance = FuelBalance.getProgress();
-        int PriceFl = Integer.parseInt(Price.getText().toString());
-        int Sum = (43-((Balance*43)/12))*PriceFl;
-        Total.setText(Sum);
+        //int Balance = FuelBalance.getProgress();
+        //int PriceFl = Integer.parseInt(Price.getText().toString());
+        int Tank = 43;
+        //int Sum = (Tank-((Balance*Tank)/12))*PriceFl;
+        Total.setText(String.valueOf(Tank));
     }
 }
