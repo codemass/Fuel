@@ -18,12 +18,16 @@ public class MainActivity extends AppCompatActivity {
     public void onButtonClick (View v) {
         SeekBar FuelBalance = (SeekBar)findViewById(R.id.seekBarFuel);
         EditText Price = (EditText) findViewById(R.id.fuelPrice);
+        TextView FuelCurrentText = (TextView) findViewById(R.id.textView2);
         TextView Total = (TextView) findViewById(R.id.result);
 
         int Balance = FuelBalance.getProgress();
         int PriceFl = Integer.parseInt(Price.getText().toString());
-        int Tank = 43;
-        int Sum = (Tank-((Balance*Tank)/12))*PriceFl;
-        Total.setText(String.valueOf(Sum));
+        int Tank = 43; //Объем бака у Соляриса.
+        int FuelCurrent = (Balance*Tank)/12; //Сколько бензина осталось в баке.
+        int Sum = (Tank-FuelCurrent)*PriceFl;
+
+        FuelCurrentText.setText("В баке осталось "+String.valueOf(FuelCurrent)+" л.");
+        Total.setText("До полного бака "+String.valueOf(Sum)+" руб.");
     }
 }

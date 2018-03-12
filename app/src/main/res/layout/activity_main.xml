@@ -40,6 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="104dp"
         android:ems="10"
+        android:gravity="center"
         android:hint="Цена бензина"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/result"
@@ -52,8 +53,9 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginBottom="45dp"
+        android:gravity="center"
         android:text="Для полного бака нужно"
-        android:textSize="24sp"
+        android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonCalc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -72,5 +74,18 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/result" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_marginEnd="138dp"
+        android:layout_marginStart="138dp"
+        android:layout_marginTop="44dp"
+        android:text="                              "
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fuelPrice" />
 
 </android.support.constraint.ConstraintLayout>
