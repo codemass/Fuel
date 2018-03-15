@@ -21,13 +21,23 @@ public class MainActivity extends AppCompatActivity {
         TextView FuelCurrentText = (TextView) findViewById(R.id.textView2);
         TextView Total = (TextView) findViewById(R.id.result);
 
-        int Balance = FuelBalance.getProgress();
-        int PriceFl = Integer.parseInt(Price.getText().toString());
-        int Tank = 43; //Объем бака у Соляриса.
-        int FuelCurrent = (Balance*Tank)/12; //Сколько бензина осталось в баке.
-        int Sum = (Tank-FuelCurrent)*PriceFl;
 
-        FuelCurrentText.setText("В баке осталось "+String.valueOf(FuelCurrent)+" л.");
-        Total.setText("До полного бака "+String.valueOf(Sum)+" руб.");
+
+        if (Price.getText().toString().trim().isEmpty()) {
+            FuelCurrentText.setText("Введите цену бензина");
+        }
+        else {
+
+            int Balance = FuelBalance.getProgress();
+            int PriceFl = Integer.parseInt(Price.getText().toString());
+            int Tank = 43; //Объем бака у Соляриса.
+            int FuelCurrent = (Balance*Tank)/12; //Сколько бензина осталось в баке.
+            int Sum = (Tank-FuelCurrent)*PriceFl;
+
+            FuelCurrentText.setText("В баке осталось "+String.valueOf(FuelCurrent)+" л.");
+            Total.setText("До полного бака "+String.valueOf(Sum)+" руб.");
+        }
+
+
     }
 }
