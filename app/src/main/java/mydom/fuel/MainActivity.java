@@ -23,16 +23,16 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        if (Price.getText().toString().trim().isEmpty()) {
+        if (Price.getText().toString().trim().isEmpty()) {  //trim() - удяляем начальные и конечные пробелы, isEmpty() - проверка на пустоту
             FuelCurrentText.setText("Введите цену бензина");
         }
         else {
 
-            int Balance = FuelBalance.getProgress();
-            int PriceFl = Integer.parseInt(Price.getText().toString());
-            int Tank = 43; //Объем бака у Соляриса.
-            int FuelCurrent = (Balance*Tank)/12; //Сколько бензина осталось в баке.
-            int Sum = (Tank-FuelCurrent)*PriceFl;
+            float Balance = FuelBalance.getProgress();
+            float PriceFl = Float.parseFloat(Price.getText().toString());
+            float Tank = 43f; //Объем бака у Соляриса.
+            float FuelCurrent = (Balance*Tank)/12; //Сколько бензина осталось в баке.
+            float Sum = (Tank-FuelCurrent)*PriceFl;
 
             FuelCurrentText.setText("В баке осталось "+String.valueOf(FuelCurrent)+" л.");
             Total.setText("До полного бака "+String.valueOf(Sum)+" руб.");
