@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
             float FuelCurrent = (Balance*Tank)/12; //Сколько бензина осталось в баке.
             float Sum = (Tank-FuelCurrent)*PriceFl;
 
-            FuelCurrentText.setText("В баке осталось "+String.valueOf(FuelCurrent)+" л.");
-            Total.setText("До полного бака "+String.valueOf(Sum)+" руб.");
+            FuelCurrentText.setText("В баке осталось "+String.format("%.1f",FuelCurrent)+" л.");
+            Total.setText("До полного бака "+String.format("%.0f", Sum)+" руб.");
         }
 
 
