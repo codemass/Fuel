@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -16,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onButtonClick (View v) {
-        SeekBar FuelBalance = (SeekBar)findViewById(R.id.seekBarFuel);
+        RatingBar FuelBalance = (RatingBar)findViewById(R.id.ratingBar);
         EditText Price = (EditText) findViewById(R.id.fuelPrice);
         TextView FuelCurrentText = (TextView) findViewById(R.id.textView2);
         TextView Total = (TextView) findViewById(R.id.result);
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
 
-            float Balance = FuelBalance.getProgress();
+            float Balance = FuelBalance.getRating();
             float PriceFl = Float.parseFloat(Price.getText().toString());
             float Tank = 43f; //Объем бака у Соляриса.
             float FuelCurrent = (Balance*Tank)/12; //Сколько бензина осталось в баке.
