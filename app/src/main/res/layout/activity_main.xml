@@ -72,21 +72,15 @@
 
     <RatingBar
         android:id="@+id/ratingBar"
-        style="@style/CustomRatingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:layout_marginTop="60dp"
-        android:maxHeight="115dp"
-        android:maxWidth="245dp"
         android:numStars="1"
-        android:rating="0.08333"
-        android:rotation="0"
-        android:scrollbarAlwaysDrawHorizontalTrack="false"
-        android:scrollbarAlwaysDrawVerticalTrack="false"
-        android:soundEffectsEnabled="false"
+        android:progressDrawable="@drawable/custom_ratingbar"
+        android:rating="0.5"
         android:stepSize="0.08333"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

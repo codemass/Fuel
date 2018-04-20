@@ -14,7 +14,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
     </style>
 
-    <style name="CustomRatingBar" parent="@android:style/Widget.RatingBar">
+    <style name="CustomRatingBar" parent="Widget.AppCompat.RatingBar">
         <item name="android:progressDrawable">@drawable/custom_ratingbar</item>
         <item name="android:minHeight">115dp</item>
         <item name="android:maxHeight">115dp</item>
