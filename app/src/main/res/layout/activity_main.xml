@@ -70,18 +70,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <RatingBar
-        android:id="@+id/ratingBar"
-        android:layout_width="244dp"
-        android:layout_height="109dp"
-        android:numStars="1"
-        android:orientation="vertical"
+    <SeekBar
+        android:id="@+id/seekBar2"
+        android:layout_width="263dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="316dp"
+        android:progressBackgroundTint="@drawable/fuel_indicator_empty"
         android:progressDrawable="@drawable/custom_ratingbar"
-        android:rating="0.5"
-        android:stepSize="0.08333"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:progressTint="@drawable/fuel_indicator_full"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

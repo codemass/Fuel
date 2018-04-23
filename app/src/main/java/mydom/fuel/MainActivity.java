@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onButtonClick (View v) {
-        RatingBar FuelBalance = (RatingBar)findViewById(R.id.ratingBar);
+        SeekBar FuelBalance = (SeekBar)findViewById(R.id.seekBar2);
         EditText Price = (EditText) findViewById(R.id.fuelPrice);
         TextView FuelCurrentText = (TextView) findViewById(R.id.textView2);
         TextView Total = (TextView) findViewById(R.id.result);
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
 
-            float Balance = FuelBalance.getRating();
+            float Balance = FuelBalance.getProgress();
             float PriceFl = Float.parseFloat(Price.getText().toString());
             float Tank = 43f; //Объем бака у Соляриса.
             float FuelCurrent = (Balance*Tank)/12; //Сколько бензина осталось в баке.
