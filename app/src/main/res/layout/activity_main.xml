@@ -71,11 +71,11 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <SeekBar
-        android:id="@+id/seekBar2"
-        android:layout_width="245dp"
-        android:layout_height="115dp"
-        android:layout_marginStart="147dp"
-        android:layout_marginTop="100dp"
+        android:id="@+id/seekBar"
+        android:layout_width="238px"
+        android:layout_height="119px"
+        android:layout_marginStart="422px"
+        android:layout_marginTop="237px"
         android:max="12"
         android:padding="0dp"
         android:paddingBottom="0dp"
@@ -85,10 +85,9 @@
         android:paddingStart="0dp"
         android:paddingTop="0dp"
         android:progress="12"
-        android:progressDrawable="@drawable/custom_ratingbar"
+        android:progressDrawable="@drawable/seekbar_custom"
         android:rotation="-90"
-        android:scaleX="0.5"
-        android:scaleY="0.5"
+        android:thumb="@drawable/thumb"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

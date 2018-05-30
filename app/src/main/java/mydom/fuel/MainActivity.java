@@ -4,7 +4,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.RatingBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -17,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onButtonClick (View v) {
-        SeekBar FuelBalance = (SeekBar)findViewById(R.id.seekBar2);
+        SeekBar FuelBalance = (SeekBar)findViewById(R.id.seekBar);
         EditText Price = (EditText) findViewById(R.id.fuelPrice);
         TextView FuelCurrentText = (TextView) findViewById(R.id.textView2);
         TextView Total = (TextView) findViewById(R.id.result);
