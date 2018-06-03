@@ -1,5 +1,6 @@
 package mydom.fuel;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         if (Price.getText().toString().trim().isEmpty()) {  //trim() - удяляем начальные и конечные пробелы, isEmpty() - проверка на пустоту
-            FuelCurrentText.setText("Введите цену бензина");
+            FuelCurrentText.setText("Введите цену бензина"); //Выводит надпись, если цена пустая
+            FuelCurrentText.setTextColor(Color.RED); //Назначает этой надписи цвет
+
         }
         else {
 
