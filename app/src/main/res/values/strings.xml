@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Fuel</string>
+    <string name="editTextHint"><font size="35"><b>00.00</b></font></string>
+    <string name="enterPrice"><font color="35">Введите цену</font></string>
 </resources>
