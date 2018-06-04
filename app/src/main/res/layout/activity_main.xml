@@ -94,7 +94,7 @@
     <EditText
         android:id="@+id/fuelPrice"
         style="@style/TextWhite"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
         android:background="@android:color/transparent"
@@ -102,6 +102,7 @@
         android:gravity="center"
         android:hint="@string/editTextHint"
         android:inputType="numberDecimal"
+        android:maxLength="5"
         android:textColorHint="@color/solarisWhite"
         android:textSize="35sp"
         android:textStyle="bold"
