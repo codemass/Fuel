@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (Price.getText().toString().trim().isEmpty()) {  //trim() - удяляем начальные и конечные пробелы, isEmpty() - проверка на пустоту
             FuelCurrentText.setText("Введите цену бензина"); //Выводит надпись, если цена пустая
-            FuelCurrentText.setTextColor(Color.parseColor("#ff4d4d")); //Назначает этой надписи цвет
+            FuelCurrentText.setTextColor(Color.parseColor("#ff4d4d")); //Назначает этой надписи красный цвет
 
         }
         else {
