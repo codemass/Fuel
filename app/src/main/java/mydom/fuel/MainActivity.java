@@ -48,19 +48,31 @@ public class MainActivity extends AppCompatActivity {
             String sSum = String.format("%.0f", Sum); //Округление результата необходимой суммы для полного бака в рублях
 
             //Из-за того, что мне захотелось перекрасить результат с литрами, приходится нагромождать вот это...
+            //Первая строка (литры)
             SpannableStringBuilder txtInTank = new SpannableStringBuilder("В баке осталось ");
             SpannableStringBuilder txtresultL = new SpannableStringBuilder(sFuelCurrent);
-            SpannableStringBuilder txtliters = new SpannableStringBuilder(" руб.");
+            SpannableStringBuilder txtliters = new SpannableStringBuilder(" л.");
             SpannableStringBuilder resultLitersLeft = new SpannableStringBuilder();
 
             txtresultL.setSpan(new ForegroundColorSpan(Color.YELLOW), 0, sFuelCurrent.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            txtresultL.setSpan(new StyleSpan(android.graphics.Typeface.BOLD), 0, sFuelCurrent.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-            resultLitersLeft.append(txtInTank).append(txtresultL).append(txtliters);
-            //String sInTankLeft = getString(R.string.inTankLeft, sFuelCurrent); //В strings.xml в строке где %1$s это переменная, которую нужно конкатенировать. Может так же %2$s - строка, и %2$d - число.
+            resultLitersLeft.append(txtInTank).append(txtresultL).append(txtliters); //Собираем все строки в единую переменную
 
             FuelCurrentText.setText(resultLitersLeft);
-            //Total.setText("До полного бака "+ssb.toString()+" руб.");
 
+            //Вторая строка (цена, руб.)
+            SpannableStringBuilder txtForFullTank = new SpannableStringBuilder("До полного бака ");
+            SpannableStringBuilder txtSum = new SpannableStringBuilder(sSum);
+            SpannableStringBuilder txtRub = new SpannableStringBuilder(" руб.");
+            SpannableStringBuilder resultForFullTankRub = new SpannableStringBuilder();
+
+            txtSum.setSpan(new ForegroundColorSpan(Color.YELLOW), 0, sSum.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            txtSum.setSpan(new StyleSpan(android.graphics.Typeface.BOLD), 0, sSum.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+            resultForFullTankRub.append(txtForFullTank).append(txtSum).append(txtRub); //Собираем все строки в единую переменную
+
+            Total.setText(resultForFullTankRub);
 
 
         }
