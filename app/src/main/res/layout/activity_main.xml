@@ -23,7 +23,7 @@
         android:paddingRight="0dp"
         android:paddingStart="0dp"
         android:paddingTop="0dp"
-        android:progress="6"
+        android:progress="8"
         android:progressDrawable="@drawable/seekbar_custom"
         android:rotation="-90"
         android:thumb="@drawable/thumb"

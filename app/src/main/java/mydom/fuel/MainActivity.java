@@ -1,9 +1,17 @@
 package mydom.fuel;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.StyleSpan;
+import android.text.style.UnderlineSpan;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.SeekBar;
@@ -39,9 +47,18 @@ public class MainActivity extends AppCompatActivity {
             float Tank = 43f; //Объем бака у Соляриса.
             float FuelCurrent = (Balance*Tank)/12; //Сколько бензина осталось в баке.
             float Sum = (Tank-FuelCurrent)*PriceFl;
+            String sFuelCurrent = String.format("%.1f",FuelCurrent);
+            String sSum = String.format("%.0f", Sum); //Округление результата
+
+            SpannableStringBuilder ssb = new SpannableStringBuilder(sSum);
+            ssb.setSpan(new ForegroundColorSpan(Color.RED), 0, sSum.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
 
             FuelCurrentText.setText("В баке осталось "+String.format("%.1f",FuelCurrent)+" л.");
-            Total.setText("До полного бака "+String.format("%.0f", Sum)+" руб.");
+            Total.setText("До полного бака "+ssb.toString()+" руб.");
+
+
+
         }
 
 
