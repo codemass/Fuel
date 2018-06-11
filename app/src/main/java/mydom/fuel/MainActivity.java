@@ -31,13 +31,6 @@ public class MainActivity extends AppCompatActivity {
         TextView Total = (TextView) findViewById(R.id.result);
         int textColor = ContextCompat.getColor(this, R.color.solarisWhite); //Получаем доступ в color.xml к нужному цвету
 
-        String inTankLeft = getResources().getString(R.string.inTankLeft);
-        String liters = getResources().getString(R.string.liters);
-        String upToFullTank = getResources().getString(R.string.upToFullTank);
-        String rub = getResources().getString(R.string.rub);
-
-
-
         if (Price.getText().toString().trim().isEmpty()) {  //trim() - удяляем начальные и конечные пробелы, isEmpty() - проверка на пустоту
             FuelCurrentText.setText("Введите цену бензина"); //Выводит надпись, если цена пустая
             FuelCurrentText.setTextColor(Color.parseColor("#ff4d4d")); //Назначает этой надписи красный цвет
@@ -51,16 +44,22 @@ public class MainActivity extends AppCompatActivity {
             float Tank = 43f; //Объем бака у Соляриса.
             float FuelCurrent = (Balance*Tank)/12; //Сколько бензина осталось в баке.
             float Sum = (Tank-FuelCurrent)*PriceFl;
-            String sFuelCurrent = String.format("%.1f",FuelCurrent);
-            String sSum = String.format("%.0f", Sum); //Округление результата
+            String sFuelCurrent = String.format("%.1f",FuelCurrent); //Округление результата оставшихся литров в баке
+            String sSum = String.format("%.0f", Sum); //Округление результата необходимой суммы для полного бака в рублях
 
-            SpannableStringBuilder ssb = new SpannableStringBuilder(sSum);
-            ssb.setSpan(new ForegroundColorSpan(Color.RED), 0, sSum.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            //Из-за того, что мне захотелось перекрасить результат с литрами, приходится нагромождать вот это...
+            SpannableStringBuilder txtInTank = new SpannableStringBuilder("В баке осталось ");
+            SpannableStringBuilder txtresultL = new SpannableStringBuilder(sFuelCurrent);
+            SpannableStringBuilder txtliters = new SpannableStringBuilder(" руб.");
+            SpannableStringBuilder resultLitersLeft = new SpannableStringBuilder();
 
-            String sInTankLeft = getString(R.string.inTankLeft, sFuelCurrent);
+            txtresultL.setSpan(new ForegroundColorSpan(Color.YELLOW), 0, sFuelCurrent.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-            FuelCurrentText.setText(sInTankLeft);
-            Total.setText("До полного бака "+ssb.toString()+" руб.");
+            resultLitersLeft.append(txtInTank).append(txtresultL).append(txtliters);
+            //String sInTankLeft = getString(R.string.inTankLeft, sFuelCurrent); //В strings.xml в строке где %1$s это переменная, которую нужно конкатенировать. Может так же %2$s - строка, и %2$d - число.
+
+            FuelCurrentText.setText(resultLitersLeft);
+            //Total.setText("До полного бака "+ssb.toString()+" руб.");
 
 
 
