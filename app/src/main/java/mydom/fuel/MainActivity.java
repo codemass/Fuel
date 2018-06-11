@@ -1,7 +1,6 @@
 package mydom.fuel;
 
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
         TextView Total = (TextView) findViewById(R.id.result);
         int textColor = ContextCompat.getColor(this, R.color.solarisWhite); //Получаем доступ в color.xml к нужному цвету
 
+        String inTankLeft = getResources().getString(R.string.inTankLeft);
+        String liters = getResources().getString(R.string.liters);
+        String upToFullTank = getResources().getString(R.string.upToFullTank);
+        String rub = getResources().getString(R.string.rub);
+
 
 
         if (Price.getText().toString().trim().isEmpty()) {  //trim() - удяляем начальные и конечные пробелы, isEmpty() - проверка на пустоту
@@ -53,8 +57,9 @@ public class MainActivity extends AppCompatActivity {
             SpannableStringBuilder ssb = new SpannableStringBuilder(sSum);
             ssb.setSpan(new ForegroundColorSpan(Color.RED), 0, sSum.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
+            String sInTankLeft = getString(R.string.inTankLeft, sFuelCurrent);
 
-            FuelCurrentText.setText("В баке осталось "+String.format("%.1f",FuelCurrent)+" л.");
+            FuelCurrentText.setText(sInTankLeft);
             Total.setText("До полного бака "+ssb.toString()+" руб.");
 
 
