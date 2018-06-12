@@ -5,12 +5,9 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Spannable;
-import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
-import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
-import android.text.style.UnderlineSpan;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.SeekBar;
@@ -54,12 +51,12 @@ public class MainActivity extends AppCompatActivity {
             SpannableStringBuilder txtliters = new SpannableStringBuilder(" л.");
             SpannableStringBuilder resultLitersLeft = new SpannableStringBuilder();
 
-            txtresultL.setSpan(new ForegroundColorSpan(Color.YELLOW), 0, sFuelCurrent.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            txtresultL.setSpan(new StyleSpan(android.graphics.Typeface.BOLD), 0, sFuelCurrent.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            txtresultL.setSpan(new ForegroundColorSpan(Color.YELLOW), 0, sFuelCurrent.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE); //Желтый цвет литров
+            txtresultL.setSpan(new StyleSpan(android.graphics.Typeface.BOLD), 0, sFuelCurrent.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);  //Толстый стиль текста литров
 
             resultLitersLeft.append(txtInTank).append(txtresultL).append(txtliters); //Собираем все строки в единую переменную
 
-            FuelCurrentText.setText(resultLitersLeft);
+            FuelCurrentText.setText(resultLitersLeft); //Вывод результатов первой строки
 
             //Вторая строка (цена, руб.)
             SpannableStringBuilder txtForFullTank = new SpannableStringBuilder("До полного бака ");
@@ -72,9 +69,9 @@ public class MainActivity extends AppCompatActivity {
 
             resultForFullTankRub.append(txtForFullTank).append(txtSum).append(txtRub); //Собираем все строки в единую переменную
 
-            Total.setText(resultForFullTankRub);
+            Total.setText(resultForFullTankRub); //Вывод результатов второй строки
 
-
+            //Вынести span в отдельный класс
         }
 
 
