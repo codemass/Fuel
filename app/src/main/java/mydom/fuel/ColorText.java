@@ -20,7 +20,7 @@ public class ColorText {
         return resultLitersLeft.append(txtInTank).append(txtresultL).append(txtliters); //Собираем все строки в единую переменную
     }
 
-    public SpannableStringBuilder txtColorPriceResult (String sSum) {
+    public static SpannableStringBuilder txtColorPriceResult (String sSum) {
         //Вторая строка (цена, руб.)
         SpannableStringBuilder txtForFullTank = new SpannableStringBuilder("До полного бака ");
         SpannableStringBuilder txtSum = new SpannableStringBuilder(sSum);
