@@ -4,10 +4,6 @@ import android.graphics.Color;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Spannable;
-import android.text.SpannableStringBuilder;
-import android.text.style.ForegroundColorSpan;
-import android.text.style.StyleSpan;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.SeekBar;
@@ -45,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             String sFuelCurrent = String.format("%.1f",FuelCurrent); //Округление результата оставшихся литров в баке
             String sSum = String.format("%.0f", Sum); //Округление результата необходимой суммы для полного бака в рублях
 
-            FuelCurrentText.setText(ColorText.txtColorFuelResult (sFuelCurrent)); //Вывод результатов первой строки. Сколько бензина в баке осталось.
+            FuelCurrentText.setText(ColorText.txtColorFuelResult (sFuelCurrent)); //Вывод результатов первой строки. Сколько бензина в баке осталось. Вызов метода txtColorFuelResult из класса ColorText с передачей параметра sFuelCurrent.
             Total.setText(ColorText.txtColorPriceResult (sSum)); //Вывод результатов второй строки. Сколько нужно рублей до полного бака.
         }
 
